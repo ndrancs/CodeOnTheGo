@@ -119,6 +119,8 @@ public final class Environment {
 	public static final String NDK_TAR_XZ = "ndk-cmake.tar.xz";
 	public static File NDK_DIR;
 
+	public static File TEMPLATES_DIR;
+
 	public static String getArchitecture() {
 		return IDEBuildConfigProvider.getInstance().getCpuAbiName();
 	}
@@ -186,6 +188,8 @@ public final class Environment {
 		KEYSTORE_PROPERTIES = new File(KEYSTORE_DIR, KEYSTORE_PROPERTIES_NAME);
 
 		NDK_DIR = new File(ANDROID_HOME, "ndk");
+
+		TEMPLATES_DIR = mkdirIfNotExists(new File(ANDROIDIDE_HOME, "templates"));
 
 		isInitialized.set(true);
 	}
