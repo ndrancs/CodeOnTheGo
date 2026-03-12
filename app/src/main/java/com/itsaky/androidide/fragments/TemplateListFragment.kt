@@ -120,7 +120,6 @@ class TemplateListFragment :
 				.getTemplates()
 				.filterIsInstance<ProjectTemplate>()
 
-    log.debug("templates: $templates")
 		adapter =
 			TemplateListAdapter(
 				templates = templates,
